@@ -1,0 +1,993 @@
+(defun publication-order-next ()
+  "Inserts (publication-order n) where n comes from register"
+  (interactive)
+  (setq order (+ 1 order))
+  (insert "
+(publication-order \"")
+  (insert (number-to-string order))
+  (insert "\")"))
+(setq order 0)
+
+Two questions:
+
+- Question x: How do we represent the categories in a spreadsheet?
+              Solution 1: There is a column for "category". A cell with multiple values represents them with line breaks.
+                          Problem: Hard to find all entries with a given category.
+              Solution 2: For each category, there is a column.
+                          Problem: Too many columns.
+              Solution 3: Use Django, categories can be searched, etc.
+
+- Question x: Volumes and works.
+              Sometimes there is one volume binding together multiple works.
+              Sometimes one work is published as multiple volumes.
+              Solution 1: Treat minimal one as row.
+              Solution 2: Use Django, make it a many-to-many relation, etc.
+
+--------------------------------------------------------------------------------
+
+
+
+(english-volume-title "The Bawd’s Counsel")
+(category "Satire")
+(category "Erotic Humour")
+(sanskrit-volume-title "Kuṭṭanīmata")
+(sanskrit-authors "Dāmodaragupta")
+(translators "Csaba Dezső & Dominic Goodall")
+(published "no")
+
+
+
+
+(english-volume-title "“A Bawd’s Life” and “The Ornamental Onion”")
+(category "Satire")
+(category "Kṣemendra")
+(category "From Kashmir")
+(category "Farce")
+(category "Erotic Humour")
+(sanskrit-volume-title "Samayamātṛkā & Palāṇḍumaṇḍana")
+(sanskrit-authors "Kṣemendra & Harijīvanamiśra")
+(translators "Isabelle Onians")
+(published "no")
+
+
+
+(volume-link "volume-v-78.html")
+(english-volume-title "Bhatti’s Poem: The Death of Rávana")
+(category "The Rāma Story")
+(category "Poetry")
+(publication-order "45")
+(sanskrit-volume-title "Bhaṭṭikāvya")
+(sanskrit-authors "Bhaṭṭi")
+(translators "Oliver Fallon")
+(published "2009")
+
+
+
+(volume-link "volume-v-1.html")
+(english-volume-title "The Birth of Kumára")
+(category "The Śiva Story")
+(category "Kālidāsa")
+(category "Grand Poetry (Mahākāvya)")
+(sanskrit-volume-title "Kumārasaṃbhava")
+(sanskrit-authors "Kālidāsa")
+(translators "David Smith")
+(published "2005")
+(foreword "U.R. Ananthamurthy*")
+(publication-order "5")
+
+
+
+(volume-link "volume-v-38.html")
+(english-volume-title "“Bouquet of Rasa” and “River of Rasa”")
+(category "Poetry")
+(category "Literary Aesthetics")
+(publication-order "41")
+(sanskrit-volume-title "Rasamañjarī & Rasataraṅgiṇī")
+(sanskrit-authors "Bhānudatta")
+(translators "Sheldon I. Pollock")
+(published "2009")
+
+
+
+(english-volume-title "The Deeds of King Harsha")
+(category "Historical Literature (Kāvya) and Panegyrics")
+(sanskrit-volume-title "Harṣacarita")
+(sanskrit-authors "Bāṇa")
+(translators "Robert A. Hueckstedt")
+(published "no")
+
+
+
+(volume-link "Emperor_of_the_Sorcerers_vol1-v-2.html")
+(category "Based on the “Long Story” (Bṛhatkathā)")
+(category "Story Collections, Tales and Narratives")
+(english-volume-title "The Emperor of the Sorcerers (volume one)")
+(sanskrit-volume-title "Bṛhatkathāślokasaṃgraha")
+(sanskrit-authors "Budhasvāmin")
+(translators "Sir James Mallinson")
+(published "2005")
+(publication-order "1")
+
+
+
+(volume-link "volume-v-5.html")
+(category "Based on the “Long Story” (Bṛhatkathā)")
+(publication-order "13")
+(english-volume-title "The Emperor of the Sorcerers (volume two)")
+(category "Story Collections, Tales and Narratives")
+(sanskrit-volume-title "Bṛhatkathāślokasaṃgraha")
+(sanskrit-authors "Budhasvāmin")
+(translators "Sir James Mallinson")
+(published "2005")
+
+
+
+(volume-link "volume-v-3.html")
+(publication-order "7")
+(english-volume-title "The Epitome of Queen Lilávati (volume one)")
+(category "Story Collections, Tales and Narratives")
+(category "Jainism")
+(sanskrit-volume-title "Līlāvatīsāra")
+(sanskrit-authors "Jinaratna")
+(translators "R.C.C. Fynes")
+(published "2005")
+
+
+
+(volume-link "volume-v-19.html")
+(publication-order "18")
+(english-volume-title "The Epitome of Queen Lilávati (volume two)")
+(category "Story Collections, Tales and Narratives")
+(category "Jainism")
+(sanskrit-volume-title "Līlāvatīsāra")
+(sanskrit-authors "Jinaratna")
+(translators "R.C.C. Fynes")
+(published "2006")
+
+
+
+(volume-link "volume-v-20.html")
+(publication-order "19")
+(english-volume-title "Five Discourses on Worldly Wisdom")
+(category "Story Collections, Tales and Narratives")
+(category "Fables")
+(sanskrit-volume-title "Pañcatantra")
+(sanskrit-authors "Viṣṇuśarman")
+(translators "Patrick Olivelle")
+(published "2006")
+
+
+
+(volume-link "volume-v-40.html")
+(english-volume-title "“Friendly Advice” and “King Víkrama’s Adventures”")
+(category "Story Collections, Tales and Narratives")
+(category "Fables")
+(publication-order "32")
+(sanskrit-volume-title "Hitopadeśa & Vikramacarita")
+(sanskrit-authors "Nārāyaṇa")
+(translators "Judit Törzsök")
+(published "2007")
+
+
+
+(volume-link "volume-v-41.html")
+(english-volume-title "Garland of the Buddha’s Past Lives (volume one of two)")
+(category "Story Collections, Tales and Narratives")
+(category "Buddhist Books")
+(publication-order "42")
+(sanskrit-volume-title "Jātakamālā")
+(sanskrit-authors "Āryaśūra")
+(translators "Justin Meiland")
+(published "2009")
+
+
+
+(volume-link "volume-v-98.html")
+(category "Buddhist Books")
+(english-volume-title "Garland of the Buddha’s Past Lives (volume two of two)")
+(publication-order "50")
+(sanskrit-volume-title "Jātakamālā")
+(sanskrit-authors "Āryaśūra")
+(translators "Justin Meiland")
+(published "yes")
+
+
+
+(volume-link "volume-v-42.html")
+(english-volume-title "Gita·govínda: Love Songs of Radha and Krishna")
+(category "Poetry")
+(category "From Eastern India (Bengal)")
+(publication-order "40")
+(sanskrit-volume-title "Gītagovindakāvya")
+(sanskrit-authors "Jayadeva")
+(translators "Lee Siegel")
+(foreword "Sudipta Kaviraj")
+(published "2009")
+
+
+
+(volume-link "Handsome_Nanda-v-43.html")
+(category "Grand Poetry (Mahākāvya)")
+(category "Buddhist Books")
+(publication-order "29")
+(english-volume-title "Handsome Nanda")
+(sanskrit-volume-title "Saundarananda")
+(sanskrit-authors "Aśvaghoṣa")
+(translators "Linda Covill")
+(published "2007")
+
+
+
+(volume-link "volume-v-6.html")
+(english-volume-title "Heavenly Exploits (Buddhist Biographies from the Dívyavadána)")
+(category "Story Collections, Tales and Narratives")
+(category "Buddhist Books")
+(sanskrit-volume-title "Divyāvadāna")
+(translator "Joel Tatelman")
+(published "2005")
+(publication-order "2")
+
+
+
+(volume-link "volume-v-45.html")
+(english-volume-title "How Úrvashi Was Won")
+(category "Kālidāsa")
+(category "Grand Poetry (Mahākāvya)")
+(category "Drama")
+(publication-order "48")
+(sanskrit-volume-title "Vikramorvaśīya")
+(sanskrit-authors "Kālidāsa")
+(translators "Velcheru Narayana Rao & David Shulman")
+(published "2009")
+
+
+
+(volume-link "volume-v-44.html")
+(english-volume-title "“How the Nagas Were Pleased” and “The Shattered Thighs”")
+(category "King-Poets")
+(category "Drama")
+(category "Buddhist Books")
+(publication-order "39")
+(sanskrit-volume-title "Nāgānanda & Ūrubhaṅga")
+(sanskrit-authors "Harṣa and Bhāsa")
+(translators "Andrew Skilton")
+(published "2009")
+
+
+
+(english-volume-title "The Hunter and the Hero")
+(category "Grand Poetry (Mahākāvya)")
+(sanskrit-volume-title "Kirātārjunīya")
+(sanskrit-authors "Bhāravi")
+(translators "Indira Peterson")
+(published "no")
+
+
+
+
+(english-volume-title "In the Court of King Bhoja")
+(category "Story Collections, Tales and Narratives")
+(category "Historical Literature (Kāvya) and Panegyrics")
+(sanskrit-volume-title "Bhojaprabandha")
+(sanskrit-authors "Ballāla")
+(translators "Gary Tubb")
+(published "no")
+
+
+
+
+(volume-link "HarshaPlays-v-33.html")
+(english-volume-title "“The Lady of the Jewel Necklace” and “The Lady Who Shows Her Love”")
+(category "King-Poets")
+(category "Drama")
+(publication-order "27")
+(sanskrit-volume-title "Ratnāvalī & Priyadarśikā")
+(sanskrit-authors "Harṣa")
+(translators "Wendy Doniger")
+(foreword "Anita Desai")
+(published "2007")
+
+
+
+(volume-link "Life_of_the_Buddha-v-48.html")
+(english-volume-title "Life of the Buddha")
+(category "Grand Poetry (Mahākāvya)")
+(category "Buddhist Books")
+(publication-order "33")
+(sanskrit-volume-title "Buddhacarita")
+(sanskrit-authors "Aśvaghoṣa")
+(translators "Patrick Olivelle")
+(published "2008")
+
+
+
+(volume-link "volume-v-49.html")
+(english-volume-title "The Little Clay Cart")
+(category "Drama")
+(publication-order "44")
+(sanskrit-volume-title "Mṛcchakaṭikā")
+(sanskrit-authors "Śūdraka")
+(translators "Diwakar Acharya")
+(foreword "Partha Chatterjee")
+(published "2009")
+
+
+
+(volume-link "volume-v-8.html")
+(publication-order "9")
+(english-volume-title "Love Lyrics")
+(category "Poetry")
+(sanskrit-volume-title "Amaruśataka, Śatakatraya & Caurapañcāśikā")
+(sanskrit-authors "Amaru, Bhartṛhari & Bilhaṇa")
+(translators "Greg Bailey & Richard Gombrich")
+(published "2005")
+
+
+
+(english-volume-title "Lyrical Verse Explained")
+(category "Literary Aesthetics")
+(sanskrit-volume-title "Gāthāsaptaśatīsāra, Bhāvadīpikā & Dhvanigāthāpañjikā")
+(translators "Somadeva Vasudeva")
+(published "no")
+
+
+
+(english-volume-title "Málati and Mádhava")
+(category "Drama")
+(sanskrit-volume-title "Mālatīmādhava")
+(sanskrit-authors "Bhavabhūti")
+(translators "Michael Coulson")
+(published "no")
+
+
+
+(volume-link "volume-v-95.html")
+(english-volume-title "Málavika and Agni·mitra")
+(category "Drama")
+(publication-order "56")
+(sanskrit-volume-title "Mālavikāgnimitram")
+(sanskrit-authors "Kālidāsa")
+(translators "Dániel Balogh & Eszter Somogyi")
+(published "no")
+
+
+
+(english-volume-title "The Magical Vine of the Bodhi·sattva’s Many Lives")
+(category "Story Collections, Tales and Narratives")
+(category "Kṣemendra")
+(category "From Kashmir")
+(category "Buddhist Books")
+(sanskrit-volume-title "Bodhisattvāvadānakalpalatā")
+(sanskrit-authors "Kṣemendra")
+(translators "Isabelle Onians")
+(published "no")
+
+
+
+(english-volume-title "Maha·bhárata I: The Beginning (volume one of three)")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(sanskrit-volume-title "Ādiparvan")
+(translators "Adam Bowles")
+(published "no")
+
+
+(english-volume-title "Maha·bhárata I: The Beginning (volume two of three)")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(sanskrit-volume-title "Ādiparvan")
+(translators "Paul Wilmot")
+(published "no")
+
+
+(english-volume-title "Maha·bhárata I: The Beginning (volume three of three)")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(sanskrit-volume-title "Ādiparvan")
+(translators "Simon Brodbeck")
+(published "no")
+
+
+(volume-link "volume-v-88.html")
+(publication-order "21")
+(english-volume-title "Maha·bhárata II: The Great Hall")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(sanskrit-volume-title "Sabhāparvan")
+(translators "Paul Wilmot")
+(published "2006")
+
+
+
+(english-volume-title "Maha·bhárata III: The Forest (volume one of four)")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(sanskrit-volume-title "Vanaparvan")
+(translators "William J. Johnson")
+(published "no")
+
+
+(english-volume-title "Maha·bhárata III: The Forest (volume two of four)")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(sanskrit-volume-title "Vanaparvan")
+(translators "Justin Meiland")
+(published "no")
+
+
+(english-volume-title "Maha·bhárata III: The Forest (volume three of four)")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(sanskrit-volume-title "Vanaparvan")
+(translators "")
+(published "no")
+
+
+(volume-link "volume-v-9.html")
+(english-volume-title "Maha·bhárata III: The Forest (volume four of four)")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(sanskrit-volume-title "Vanaparvan")
+(translators "William J. Johnson")
+(published "2005")
+(publication-order "3")
+
+
+
+(volume-link "volume-v-28.html")
+(english-volume-title "Maha·bhárata IV: Viráta")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(publication-order "25")
+(sanskrit-volume-title "Virāṭaparvan")
+(translators "Kathleen Garbutt")
+(published "2007")
+
+
+
+(volume-link "volume-v-53.html")
+(english-volume-title "Maha·bhárata V: Preparations for War (volume one of two)")
+(category "Philosophical Literature")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(publication-order "34")
+(sanskrit-volume-title "Udyogaparvan")
+(translators "Kathleen Garbutt")
+(foreword "Gurcharan Das")
+(published "2008")
+
+
+
+(volume-link "volume-v-85.html")
+(english-volume-title "Maha·bhárata V: Preparations for War (volume two of two)")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(publication-order "36")
+(sanskrit-volume-title "Udyogaparvan")
+(translators "Kathleen Garbutt")
+(translators "2008")
+
+
+
+(volume-link "volume-v-54.html")
+(english-volume-title "Maha·bhárata VI: Bhishma (volume one of two) Including the “Bhagavad Gita” in Context")
+(category "Philosophical Literature")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(publication-order "37")
+(sanskrit-volume-title "Bhīṣmaparvan")
+(translators "Alex Cherniak")
+(foreword "Ranajit Guha")
+(published "2008")
+
+
+
+(volume-link "volume-v-93.html")
+(english-volume-title "Maha·bhárata VI: Bhishma (volume two of two)")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(publication-order "47")
+(sanskrit-volume-title "Bhīṣmaparvan")
+(translators "Alex Cherniak")
+(published "2009")
+
+
+
+(volume-link "volume-v-24.html")
+(english-volume-title "Maha·bhárata VII: Drona (volume one of four)")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(publication-order "23")
+(sanskrit-volume-title "Droṇaparvan")
+(translators "Vaughan Pilikian")
+(published "2006")
+
+
+
+(volume-link "volume-v-100.html")
+(volume-link "volume-v-110.html")
+(english-volume-title "Maha·bhárata VII: Drona (volume two of four)")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(publication-order "53")
+(sanskrit-volume-title "Droṇaparvan")
+(translators "Vaughan Pilikian")
+
+
+
+(english-volume-title "Maha·bhárata VII: Drona (volumes three to four of four)")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(sanskrit-volume-title "Droṇaparvan")
+(translators "Vaughan Pilikian")
+
+
+
+(volume-link "volume-v-29.html")
+(english-volume-title "Maha·bhárata VIII: Karna (volume one of two)")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(publication-order "26")
+(sanskrit-volume-title "Karṇaparvan")
+(translators "Adam Bowles")
+(published "2007")
+
+
+
+(volume-link "volume-v-83.html")
+(english-volume-title "Maha·bhárata VIII: Karna (volume two of two)")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(publication-order "35")
+(sanskrit-volume-title "Karṇaparvan")
+(translators "Adam Bowles")
+(published "2008")
+
+
+
+(volume-link "volume-v-10.html")
+(publication-order "14")
+(english-volume-title "Maha·bhárata IX: Shalya (volume one of two)")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(publication-order "30")
+(sanskrit-volume-title "Śalyaparvan")
+(translators "Justin Meiland")
+(published "2005")
+
+
+
+(volume-link "volume-v-75.html")
+(english-volume-title "Maha·bhárata IX: Shalya (volume two of two)")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(sanskrit-volume-title "Śalyaparvan")
+(translators "Justin Meiland")
+(published "2007")
+
+
+
+(volume-link "volume-v-55.html")
+(volume-link "volume-v-111.html")
+(english-volume-title "Maha·bhárata X-XI: Dead of Night & The Women")
+(english-volume-title "Mahabharata, Books 10-11: Dead of Night / The Women")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(publication-order "54")
+(sanskrit-volume-title "Sauptikaparvan & Strīparvan")
+(translators "Kate Crosby")
+(published "yes")
+
+
+
+
+(english-volume-title "Maha·bhárata XII Peace (volumes one & two of five)")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(sanskrit-volume-title "Śāntiparvan")
+(translators "Kate Crosby")
+
+
+
+(volume-link "volume-v-97.html")
+(english-volume-title "Maha·bhárata XII: Peace: “The Book of Liberation” (volume three of five)")
+(category "Philosophical Literature")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(publication-order "43")
+(sanskrit-volume-title "Śāntiparvan, Mokṣadharma")
+(translators "Alexander Wynne")
+(published "2009")
+
+
+
+(english-volume-title "Maha·bhárata XII: Peace: “The Book of Liberation” (volumes four to five of five)")
+(category "Philosophical Literature")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(sanskrit-volume-title "Śāntiparvan, Mokṣadharma")
+(translators "Alexander Wynne")
+
+
+
+(english-volume-title "Maha·bhárata XIII: Good Counsel (three volumes)")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(sanskrit-volume-title "Anuśāsanaparvan")
+(translators "Andrew Skilton")
+
+
+
+(english-volume-title "Maha·bhárata XIV: The Horse Sacrifice")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(sanskrit-volume-title "Āśvamedhikaparvan")
+(translators "Greg Bailey")
+
+
+
+(english-volume-title "Maha·bhárata XV-XVIII: Final Departures")
+(sanskrit-volume-title "Āśramavāsikaparvan, Mausalaparvan, Mahāprasthānikaparvan & Svargārohaṇaparvan")
+(category "Epic: Maha·bhárata (Mahābhārata)")
+(translators "Tamar Reich")
+
+
+
+(volume-link "volume-v-113.html")
+(english-volume-title "Malavika and Agnimitra")
+(category "Kālidāsa")
+(sanskrit-volume-title "")
+(sanskrit-authors "Kali dasa")
+(translators "Daniel Balogh, Eszter Somogyi")
+(published "yes")
+
+
+
+(volume-link "volume-v-21.html")
+(publication-order "16")
+(english-volume-title "Messenger Poems")
+(category "Poetry")
+(category "Kālidāsa")
+(category "From Eastern India (Bengal)")
+(sanskrit-volume-title "Meghadūta, Pavanadūta & Haṃsadūta")
+(sanskrit-authors "Kālidāsa, Dhoyī, and Rūpa Gosvāmin")
+(translators "Sir James Mallinson")
+(published "2006")
+
+
+
+(english-volume-title "Moonlight of Glory")
+(category "Historical Literature (Kāvya) and Panegyrics")
+(sanskrit-volume-title "Kīrttikaumudī")
+(sanskrit-authors "Someśvaradeva")
+(translators "Somadeva Vasudeva")
+(published "no")
+
+
+
+
+(volume-link "volume-v-11.html")
+(english-volume-title "Much Ado About Religion")
+(category "Satire")
+(category "Philosophical Literature")
+(category "Drama")
+(sanskrit-volume-title "Āgamaḍambara")
+(sanskrit-authors "Bhaṭṭa Jayanta")
+(translators "Csaba Dezső")
+(published "2005")
+(publication-order "4")
+
+
+
+(english-volume-title "Nava·sahasánka and the Serpent Princess")
+(category "Grand Poetry (Mahākāvya)")
+(sanskrit-volume-title "Navasāhasāṅkacarita")
+(sanskrit-authors "Padmagupta")
+(translators "Somadeva Vasudeva")
+(published "no")
+
+
+
+(volume-link "volume-v-30.html")
+(english-volume-title "The Ocean of the Rivers of Story (volume one of seven)")
+(category "From Kashmir")
+(category "Based on the “Long Story” (Bṛhatkathā)")
+(publication-order "28")
+(sanskrit-volume-title "Kathāsaritsāgara")
+(sanskrit-authors "Somadeva")
+(translators "Sir James Mallinson")
+(published "2007")
+
+
+
+(volume-link "volume-v-86.html")
+(english-volume-title "The Ocean of the Rivers of Story (volume two of seven)")
+(category "From Kashmir")
+(category "Based on the “Long Story” (Bṛhatkathā)")
+(publication-order "38")
+(sanskrit-volume-title "Kathāsaritsāgara")
+(sanskrit-authors "Somadeva")
+(translators "Sir James Mallinson")
+(published "yes")
+
+
+
+(english-volume-title "The Ocean of the Rivers of Story (volume three to seven of seven)")
+(category "From Kashmir")
+(category "Based on the “Long Story” (Bṛhatkathā)")
+(sanskrit-volume-title "Kathāsaritsāgara")
+(sanskrit-authors "Somadeva")
+(translators "Sir James Mallinson")
+(published "no")
+
+
+
+(english-volume-title "The Parrot’s Seventy Tales")
+(category "Story Collections, Tales and Narratives")
+(sanskrit-volume-title "Śukasaptati")
+(sanskrit-authors "Cintāmaṇi Bhaṭṭa")
+(translators "Csaba Dezső")
+(published "no")
+
+
+
+(volume-link "volume-v-64.html")
+(english-volume-title "Princess Kadámbari (volume one of three)")
+(category "Story Collections, Tales and Narratives")
+(category "Poetry")
+(publication-order "51")
+(sanskrit-volume-title "Kādambarī")
+(sanskrit-authors "Bāṇa")
+(translators "David Smith")
+
+
+
+
+(english-volume-title "Princess Kadámbari (volumes two and three of three)")
+(category "Story Collections, Tales and Narratives")
+(category "Poetry")
+(sanskrit-volume-title "Kādambarī")
+(sanskrit-authors "Bāṇa")
+(translators "David Smith")
+(published "no")
+
+
+
+
+(volume-link "volume-v-107.html")
+(english-volume-title "Princess Kadambari by Bana (Author) , David Smith (Translator)")
+(published "yes")
+
+
+
+(volume-link "volume-v-31.html")
+(english-volume-title "The Quartet of Causeries")
+(category "Satire")
+(category "Poetry")
+(category "Drama")
+(publication-order "49")
+(sanskrit-volume-title "Caturbhāṇī (Pādatāḍitaka, Ubhayābhisārikā, Padmaprābhṛtaka & Dhūrtaviṭasaṃvādaḥ)")
+(sanskrit-authors "Śyāmilaka, Vararuci, Śūdraka & Īśvaradatta")
+(translators "Csaba Dezső & Somadeva Vasudeva")
+(published "yes")
+
+
+
+(volume-link "volume-v-13.html")
+(english-volume-title "Rákshasa’s Ring")
+(category "Drama")
+(sanskrit-volume-title "Mudrārākṣasa")
+(category "Political Literature")
+(category "Historical Literature (Kāvya) and Panegyrics")
+(sanskrit-authors "Viśākhadatta")
+(translators "Michael Coulson")
+(foreword "Romila Thapar*")
+(published "2005")
+
+
+
+(english-volume-title "Raghu’s Lineage (two volumes)")
+(category "The Rāma Story")
+(category "Kālidāsa")
+(category "Grand Poetry (Mahākāvya)")
+(sanskrit-volume-title "Raghuvaṃśa")
+(sanskrit-authors "Kālidāsa")
+(translators "Dominic Goodall & Harunaga Isaacson")
+(published "no")
+
+
+
+(volume-link "volume-v-14.html")
+(english-volume-title "Ramáyana I: Boyhood")
+(category "Epic: Ramáyana (Rāmāyaṇa) by Vālmīki")
+(sanskrit-volume-title "Bālakāṇḍa")
+(sanskrit-authors "Vālmīki")
+(translators "Robert P. Goldman")
+(foreword "Amartya Sen*")
+(published "2005")
+(publication-order "6")
+
+
+
+(volume-link "volume-v-15.html")
+(publication-order "8")
+(english-volume-title "Ramáyana II: Ayódhya")
+(category "Epic: Ramáyana (Rāmāyaṇa) by Vālmīki")
+(sanskrit-volume-title "Ayodhyākāṇḍa")
+(sanskrit-authors "Vālmīki")
+(translators "Sheldon I. Pollock")
+(published "2005")
+
+
+
+(volume-link "volume-v-22.html")
+(publication-order "17")
+(english-volume-title "Ramáyana III: The Forest")
+(category "Epic: Ramáyana (Rāmāyaṇa) by Vālmīki")
+(sanskrit-volume-title "Araṇyakāṇḍa")
+(sanskrit-authors "Vālmīki")
+(translators "Sheldon I. Pollock")
+(published "2006")
+
+
+
+(volume-link "volume-v-16.html")
+(publication-order "12")
+(english-volume-title "Ramáyana IV: Kishkíndha")
+(category "Epic: Ramáyana (Rāmāyaṇa) by Vālmīki")
+(sanskrit-volume-title "Kiṣkindhākāṇḍa")
+(sanskrit-authors "Vālmīki")
+(translators "Rosalind Lefeber")
+(published "2005")
+
+
+
+(volume-link "volume-v-26.html")
+(publication-order "20")
+(english-volume-title "Ramáyana V: Súndara")
+(category "Epic: Ramáyana (Rāmāyaṇa) by Vālmīki")
+(sanskrit-volume-title "Sundarakāṇḍa")
+(sanskrit-authors "Vālmīki")
+(translators "Robert P. Goldman & Sally J. Sutherland Goldman")
+(published "2006")
+
+
+
+(english-volume-title "Ramáyana VI: War (two volumes)")
+(category "Epic: Ramáyana (Rāmāyaṇa) by Vālmīki")
+(sanskrit-volume-title "Yuddhakāṇḍa")
+(sanskrit-authors "Vālmīki")
+(translators "Robert P. Goldman & Sally J. Sutherland Goldman")
+
+
+
+
+(english-volume-title "Ramáyana VII: The Final Chapter")
+(category "Epic: Ramáyana (Rāmāyaṇa) by Vālmīki")
+(sanskrit-volume-title "Uttarakāṇḍa")
+(sanskrit-authors "Vālmīki")
+(translators "Sally J. Sutherland Goldman")
+
+
+
+
+(volume-link "volume-v-66.html")
+(english-volume-title "Rama’s Last Act")
+(category "The Rāma Story")
+(category "Drama")
+(publication-order "31")
+(sanskrit-volume-title "Uttararāmacarita")
+(sanskrit-authors "Bhavabhūti")
+(translators "Sheldon I. Pollock")
+(foreword "Girish Karnad")
+(published "2007")
+
+
+
+(volume-link "volume-v-25.html")
+(english-volume-title "Rama Beyond Price")
+(category "The Rāma Story")
+(category "Drama")
+(sanskrit-volume-title "Anargharāghava")
+(publication-order "24")
+(sanskrit-authors "Murāri")
+(translators "Judit Törzsök")
+(published "2006")
+
+
+
+(volume-link "volume-v-27.html")
+(publication-order "22")
+(english-volume-title "The Recognition of Shakúntala")
+(category "Kālidāsa")
+(category "From Kashmir")
+(category "Drama")
+(sanskrit-volume-title "Abhijñānaśākuntala")
+(sanskrit-authors "Kālidāsa")
+(translators "Somadeva Vasudeva")
+(published "2006")
+(sanskrit-details "Kashmir Recension")
+
+
+
+(english-volume-title "The Recognition of Shakúntala")
+(category "Kālidāsa")
+(category "Drama")
+(sanskrit-volume-title "Abhijñānaśākuntala")
+(sanskrit-authors "Kālidāsa")
+(translators "Michael Coulson")
+(published "no")
+(sanskrit-details "Bengali Recension")
+
+
+(volume-link "volume-v-69.html")
+(volume-link "volume-v-109.html")
+(english-volume-title "The Rise of Wisdom Moon")
+(category "Philosophical Literature")
+(category "Drama")
+(publication-order "52")
+(sanskrit-volume-title "Prabodhacandrodaya")
+(sanskrit-authors "Kṛṣṇamiśra")
+(translators "Matthew Kapstein")
+(foreword "J.N. Mohanty")
+
+
+
+(volume-link "volume-v-62.html")
+(english-volume-title "“Self-Surrender,” “Peace,” “Compassion,” and “The Mission of the Goose”: Poems and Prayers from South India")
+(category "Poetry")
+(category "From South India")
+(publication-order "46")
+(sanskrit-volume-title "Ātmārpaṇastuti, Śāntivilāsa, Dayāśataka, & Haṃsasaṃdeśa")
+(sanskrit-authors "Appayya Dīkṣita, Nīlakaṇṭha  Dīkṣita, Vedānta Deśika")
+(translators "Yigal Bronner & David Shulman")
+(foreword "Gieve Patel")
+(published "2009")
+
+
+
+(volume-link "volume-v-32.html")
+(volume-link "volume-v-112.html")
+(english-volume-title "Seven Hundred Elegant Verses")
+(category "Poetry")
+(category "From Eastern India (Bengal)")
+(publication-order "55")
+(sanskrit-volume-title "Āryāsaptaśatī")
+(sanskrit-authors "Govardhana")
+(translators "Friedhelm Hardy")
+(published "yes")
+
+
+
+(english-volume-title "The Slaying of Shishu·pala")
+(category "Grand Poetry (Mahākāvya)")
+(sanskrit-volume-title "Śiśupālavadha")
+(sanskrit-authors "Māgha")
+(translators "Paul Dundas")
+(published "no")
+
+
+
+(volume-link "volume-v-17.html")
+(publication-order "11")
+(english-volume-title "Three Satires")
+(category "Satire")
+(category "Poetry")
+(category "Kṣemendra")
+(category "From Kashmir")
+(sanskrit-volume-title "Kaliviḍambana, Kalāvilāsa & Bhallaṭaśataka")
+(sanskrit-authors "Nīlakaṇṭha, Kṣemendra, and Bhallaṭa")
+(translators "Somadeva Vasudeva")
+(foreword "Mani Shankar Aiyar*")
+(published "2005")
+
+
+
+(english-volume-title "Triumph of Shiva")
+(category "The Śiva Story")
+(category "Grand Poetry (Mahākāvya)")
+(category "From Kashmir")
+(sanskrit-volume-title "Haravijaya")
+(sanskrit-authors "Ratnākara")
+(translators "David Smith")
+(published "no")
+
+
+
+
+(english-volume-title "Twenty-four Chronicles (two volumes)")
+(category "Story Collections, Tales and Narratives")
+(category "Jainism")
+(sanskrit-volume-title "Caturviṃśatiprabandha")
+(sanskrit-authors "Merutuṅga")
+(translators "Somadeva Vasudeva")
+
+
+
+
+(volume-link "volume-v-18.html")
+(publication-order "10")
+(english-volume-title "What Ten Young Men Did")
+(category "Story Collections, Tales and Narratives")
+(category "Satire")
+(category "Political Literature")
+(cateogry "From South India")
+(sanskrit-volume-title "Daśakumāracarita")
+(sanskrit-authors "Daṇḍin")
+(translators "Isabelle Onians")
+(foreword "Kiran Nagarkar")
+(published "2005")
